@@ -1,0 +1,77 @@
+html,  body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+:root {
+  --blur: 0px;
+  --brightness: 0;
+  --contrast: 0;
+  --saturate: 0;
+  --sepia: 0;
+  --invert: 0;
+  --grayscale: 0%;
+
+}
+
+#background-container {
+  width: 100vw;
+  height: 100vh;
+  background: url(./assets/images/panama-city.jpg);
+  background-size: cover;
+  z-index: -10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  filter: blur(var(--blur));
+}
+
+#title {
+  margin-top: 100px;
+}
+
+#title > h2 {
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 2px;
+}
+
+#controls {
+  position: absolute;
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  width: 500px;
+  height: 130px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+}
+
+.input-container {
+  display: inline-block;
+  margin: 0 1rem 0 1rem;
+}
+
+.range-input {
+  -webkit-appearance: slider-vertical;
+  writing-mode: bt-lr;
+  height: 100px;
+  width: 30px;
+  position: relative;
+  left: 50%;
+  margin-left: -15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+}
