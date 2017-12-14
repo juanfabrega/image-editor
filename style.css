@@ -4,17 +4,19 @@ html,  body {
   font-family: sans-serif;
 }
 
+/* declaring all variables in root for global scope */
 :root {
   --blur: 0px;
-  --brightness: 0;
-  --contrast: 0;
-  --saturate: 0;
-  --sepia: 0;
-  --invert: 0;
+  --brightness: 100%;
+  --contrast: 100%;
+  --saturate: 100%;
+  --sepia: 0%;
+  --invert: 0%;
   --grayscale: 0%;
 
 }
 
+/* container for BG image which will be manipulated by controls */
 #background-container {
   width: 100vw;
   height: 100vh;
@@ -24,7 +26,14 @@ html,  body {
   position: fixed;
   top: 0;
   left: 0;
-  filter: blur(var(--blur));
+  filter:
+    blur(var(--blur))
+    brightness(var(--brightness))
+    contrast(var(--contrast))
+    saturate(var(--saturate))
+    sepia(var(--sepia))
+    invert(var(--invert))
+    grayscale(var(--grayscale));
 }
 
 #title {
@@ -44,16 +53,12 @@ html,  body {
 }
 
 #controls {
-  position: absolute;
+  position: fixed;
   background-color: white;
-  border-radius: 2px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  width: 500px;
-  height: 130px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 60px;
   padding: 1rem;
+  bottom: 0;
 }
 
 .input-container {
@@ -64,7 +69,7 @@ html,  body {
 .range-input {
   -webkit-appearance: slider-vertical;
   writing-mode: bt-lr;
-  height: 100px;
+  height: 50px;
   width: 30px;
   position: relative;
   left: 50%;
@@ -74,4 +79,6 @@ html,  body {
 label {
   display: block;
   margin-bottom: 4px;
+  font-size: 12px;
+  color: darkgray;
 }
